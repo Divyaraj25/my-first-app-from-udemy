@@ -1,5 +1,5 @@
 <div class="container">
-    <input type="text" (input)="onInput($event)">
+    <input type="text" [(ngModel)]="serverName">
     <p>{{ serverName }}</p>
     <button class="btn btn-primary" [disabled]="!allowButton" (click)="onServerCreated()">Add Server</button>
     <p>{{ serverStatus }}</p>
