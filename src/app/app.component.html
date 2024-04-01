@@ -2,9 +2,9 @@
     <input type="text" [(ngModel)]="serverName">
     <button class="btn btn-primary" [disabled]="serverName===''" (click)="onReset()">Reset</button>
     <button class="btn btn-primary" [disabled]="!allowButton" (click)="onServerCreated()">Add Server</button>
-    <p *ngIf="textContent">{{ serverStatus }}</p>
+    <h3 *ngIf="textContent">{{ serverStatus }}</h3>
     <hr>
-    <p [ngStyle]="{backgroundColor: getColor()}">{{ StatusForServer }}</p>
+    <h3 [ngStyle]="{backgroundColor: getColor()}" [ngClass]="{online: StatusForServer === 'online'}">{{ StatusForServer}}</h3>
     <h2> {{ "Greeting" }} to {{ name }} with id {{ id }}</h2>
     <h3> function to Greeting {{ name }} is {{ greet() }}</h3>
 </div>
