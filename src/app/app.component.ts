@@ -6,21 +6,25 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  serverName = ""
   serverStatus = "server not created";
   allowButton = false;
   name = 'Divyaraj';
   id = 100;
-  greet(){
+  greet() {
     return `Hello ${this.name}`
   }
-  constructor(){
-    setTimeout(()=>{
+  constructor() {
+    setTimeout(() => {
       this.allowButton = true
       this.name = "harit"
-    },5000)
+    }, 5000)
   }
 
-  onServerCreated(){
+  onServerCreated() {
     this.serverStatus = "server created";
+  }
+  onInput(event:Event) {
+    this.serverName = (<HTMLInputElement>event.target).value
   }
 }
