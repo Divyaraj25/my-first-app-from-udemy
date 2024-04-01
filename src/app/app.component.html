@@ -4,7 +4,8 @@
     <button class="btn btn-primary" [disabled]="!allowButton" (click)="onServerCreated()">Add Server</button>
     <h3 *ngIf="textContent">{{ serverStatus }}</h3>
     <hr>
-    <h3 [ngStyle]="{backgroundColor: getColor()}" [ngClass]="{online: StatusForServer === 'online'}">{{ StatusForServer}}</h3>
+    <h3 [ngStyle]="{backgroundColor: getColor()}">{{ StatusForServer}}</h3>
+    <h5 *ngFor="let server of servers">{{server}}</h5>
     <h2> {{ "Greeting" }} to {{ name }} with id {{ id }}</h2>
     <h3> function to Greeting {{ name }} is {{ greet() }}</h3>
 </div>

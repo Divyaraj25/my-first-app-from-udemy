@@ -3,13 +3,10 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styles: [`
-  .online {
-    color: yellow;
-  }
-  `]
+  styleUrl: './app.component.css'
 })
 export class AppComponent {
+  servers = []
   StatusForServer = ''
   textContent = false
   serverName = ""
@@ -28,6 +25,7 @@ export class AppComponent {
   }
 
   onServerCreated() {
+    this.servers.push(this.serverName)
     this.textContent = true
     this.StatusForServer = Math.random() < 0.5 ? 'online' : 'offline';
     this.serverStatus = "server created and server name is " + this.serverName + " and current status " + this.StatusForServer;
