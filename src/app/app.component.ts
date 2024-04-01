@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  serverStatus = "server not created";
   allowButton = false;
   name = 'Divyaraj';
   id = 100;
@@ -17,5 +18,9 @@ export class AppComponent {
       this.allowButton = true
       this.name = "harit"
     },5000)
+  }
+
+  onServerCreated(){
+    this.serverStatus = "server created";
   }
 }
