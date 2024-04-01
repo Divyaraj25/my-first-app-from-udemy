@@ -6,9 +6,16 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  allowButton = false;
   name = 'Divyaraj';
   id = 100;
   greet(){
     return `Hello ${this.name}`
+  }
+  constructor(){
+    setTimeout(()=>{
+      this.allowButton = true
+      this.name = "harit"
+    },5000)
   }
 }
