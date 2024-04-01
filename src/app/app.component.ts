@@ -22,7 +22,7 @@ export class AppComponent {
   }
 
   onServerCreated() {
-    this.serverStatus = "server created";
+    this.serverStatus = "server created and server name is " + this.serverName;
   }
   onInput(event:Event) {
     this.serverName = (<HTMLInputElement>event.target).value
