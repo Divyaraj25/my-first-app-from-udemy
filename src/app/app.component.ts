@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  StatusForServer = ''
   textContent = false
   serverName = ""
   serverStatus = "server not created";
@@ -24,13 +25,17 @@ export class AppComponent {
 
   onServerCreated() {
     this.textContent = true
-    this.serverStatus = "server created and server name is " + this.serverName;
+    this.StatusForServer = Math.random() < 0.5 ? 'online' : 'offline';
+    this.serverStatus = "server created and server name is " + this.serverName + " and current status " + this.StatusForServer;
   }
-  onInput(event:Event) {
+  onInput(event: Event) {
     this.serverName = (<HTMLInputElement>event.target).value
   }
-  onReset(){
+  onReset() {
     this.serverName = ""
     this.textContent = false
+  }
+  getColor() {
+    return this.StatusForServer === 'online' ? 'green' : 'red'
   }
 }
