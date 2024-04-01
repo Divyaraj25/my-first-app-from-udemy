@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Divyaraj';
+  name = 'Divyaraj';
+  id = 100;
+  greet(){
+    return `Hello ${this.name}`
+  }
 }
