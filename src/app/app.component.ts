@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  textContent = false
   serverName = ""
   serverStatus = "server not created";
   allowButton = false;
@@ -22,9 +23,14 @@ export class AppComponent {
   }
 
   onServerCreated() {
+    this.textContent = true
     this.serverStatus = "server created and server name is " + this.serverName;
   }
   onInput(event:Event) {
     this.serverName = (<HTMLInputElement>event.target).value
+  }
+  onReset(){
+    this.serverName = ""
+    this.textContent = false
   }
 }

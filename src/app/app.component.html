@@ -1,7 +1,8 @@
 <div class="container">
     <input type="text" [(ngModel)]="serverName">
+    <button class="btn btn-primary" [disabled]="serverName===''" (click)="onReset()">Reset</button>
     <button class="btn btn-primary" [disabled]="!allowButton" (click)="onServerCreated()">Add Server</button>
-    <p>{{ serverStatus }}</p>
+    <p *ngIf="textContent">{{ serverStatus }}</p>
 
     <h2> {{ "Greeting" }} to {{ name }} with id {{ id }}</h2>
     <h3> function to Greeting {{ name }} is {{ greet() }}</h3>
